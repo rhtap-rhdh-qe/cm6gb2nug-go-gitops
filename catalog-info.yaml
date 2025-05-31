@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cm6gb2nug-go-gitops
+  description: This is GitOps manifest for cm6gb2nug-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=cm6gb2nug-go
+    backstage.io/kubernetes-id: cm6gb2nug-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cm6gb2nug-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cm6gb2nug-go
